@@ -62,7 +62,7 @@ void PrintArray(int[,] arr)
     {
         for (int j = 0; j < arr.GetLength(1); j++)
         {
-            Console.Write($"{arr[i, j]} ");
+            Console.Write($"{arr[i, j].ToString("D2")} ");
         }
         Console.WriteLine();
     }
