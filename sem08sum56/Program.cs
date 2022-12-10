@@ -30,15 +30,15 @@ void GetMinSumInRow(int[,] arr)
 
     int min = collection[0];
     int iMin = 0;
-    for (int i = 0; i < collection.Length - 1; i++)
+    for (int i = 0; i < collection.Length; i++)
     {
         if (collection[i] < min)
         {
             min = collection[i];
-            iMin = i + 1;
+            iMin = i;
         }
     }
-    Console.WriteLine($"Строка с наименьшей суммой элементов: {iMin}  строка");
+    Console.WriteLine($"Строка с наименьшей суммой элементов: {iMin + 1}  строка");
 }
 
 int[,] GetArray(int rows, int columns, int minValue, int maxValue)
