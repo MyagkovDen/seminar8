@@ -7,8 +7,8 @@
 
 Console.Clear();
 
-int[,] array = GetArray(10, 10);
-//PrintArray(array);
+int[,] array = GetArray(4, 4);
+PrintArray(array);
 Console.WriteLine();
 
 
@@ -22,26 +22,15 @@ int[,] GetArray(int rows, int columns)
     int rowEnd = arr.GetLength(0) - 1;
     int columnEnd = arr.GetLength(1) - 1;
     int i, j;
-    int count = 1;
 
     while (temp <= rows * columns)
     {
-
-        Console.WriteLine();
-        Console.WriteLine($"iter {count} : FOR 1:");
-        Console.WriteLine();
-
         i = rowStart;
         for (j = columnStart; j < columnEnd + 1; j++)
         {
             arr[i, j] = temp++;
         }
         rowStart++;
-
-        PrintArray(arr);
-        Console.WriteLine();
-        Console.WriteLine($"iter {count} : FOR 2:");
-        Console.WriteLine();
 
         j = columnEnd;
         for (i = rowStart; i < rowEnd + 1; i++)
@@ -50,11 +39,6 @@ int[,] GetArray(int rows, int columns)
         }
         columnEnd--;
 
-        PrintArray(arr);
-        Console.WriteLine();
-        Console.WriteLine($"iter {count} : FOR 3:");
-        Console.WriteLine();
-
         i = rowEnd;
         for (j = columnEnd; j >= columnStart; j--)
         {
@@ -62,22 +46,12 @@ int[,] GetArray(int rows, int columns)
         }
         rowEnd--;
 
-        PrintArray(arr);
-        Console.WriteLine();
-        Console.WriteLine($"iter {count} : FOR 4");
-        Console.WriteLine();
-
         j = columnStart;
-
         for (i = rowEnd; i > columnStart; i--)
         {
             arr[i, j] = temp++;
         }
         columnStart++;
-
-        PrintArray(arr);
-
-        count++;
     }
     return arr;
 }
